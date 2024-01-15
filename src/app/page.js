@@ -207,7 +207,8 @@ export default function Home() {
             </div>
            </div>
             <div className="flex flex-col gap-3 w-[50%] max-[767px]:w-[100%] justify-center items-center">
-              <div className="flex  flex-col p-2 w-[100%] h-[190px] hover:scale-[101%] duration-200 rounded-xl bg-white/20 hover:bg-[#22a2f8] shadow-lg ring-1 ring-black/5">
+              <div className="flex  flex-col p-2 w-[100%] h-[195px] hover:scale-[101%] duration-200 rounded-xl bg-white/20 hover:bg-[#22a2f8] shadow-lg ring-1 ring-black/5">
+                <div className="flex w-1/1 justify-between">
                 <div className="flex w-1/1 gap-1 justify-start">
                   <div className="duration-200 hover:border-white aspect-square w-[50px] border-2 border-black bg-contain bg-center bg-no-repeat rounded-full bg-[url('./images/me.jpg')]"></div>
                   <div className="flex flex-col justify-center">
@@ -215,9 +216,21 @@ export default function Home() {
                     <div className=" hover:underline duration-200 leading-tight text-[#cfcece]" >rishirajbdev</div>
                   </div>
                 </div>
-                <div></div>
+                <a 
+                className="w-[100px] bg-[#fafafa] font-mukta hover:scale-105 duration-200 text-black h-[30px] rounded-xl flex justify-center items-center"
+                href="https://twitter.com/rishirajbdev" target="blank">
+                  Follow
+                </a>
+                </div>
+                <div className="w-1/1 font-mukta flex flex-col justify-center items-start aspect-video">
+                  <span className="text-4xl max-[767px]:text-2xl">{`I `} 
+                  <span className="text-[#bbbcbc] underline">{`build`}</span> 
+                  {` in public and occasionally tweet about random stuff.`}</span>
+                   
+                  <span>#100DaysOfCode</span>
+                </div>
               </div>
-              <div className="w-[100%] h-[390px] hover:scale-[101%] duration-100 rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5"></div>
+              <div className="w-[100%] h-[395px] hover:scale-[101%] duration-100 rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5"></div>
             </div>
           </div>
            
