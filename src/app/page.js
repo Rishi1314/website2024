@@ -191,7 +191,38 @@ export default function Home() {
         </motion.div>
       </div>
       <div className="items-center justify-center flex flex-col text-white bg-neutral-900	">
-        <div className="flex w-[100%] flex-col justify-center items-center">
+        <div className="flex w-[100%]  flex-col py-10 justify-center items-center" >
+          <div className="flex max-[767px]:flex-col w-[80%] gap-3">
+          <div class="hover:scale-[101%] duration-100 flex flex-col justify-center items-center isolate aspect-square w-[50%] max-[767px]:w-[100%]  rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5">
+            <div className="w-[80%] font-lexend max-[767px]:text-3xl text-6xl">
+              Hi, My name is Rishi Raj B.
+            </div>
+            <div className="font-mukta w-[80%] text-[#cfcece]">
+              {
+                `
+                I enjoy creating things that exist on the internet I have a serious passion for UI effects, animations and creating intuitive, dynamic user experiences.Interested in the entire Frontend spectrum and working on ambitious projects with positive people.
+                When i don't code, I like to photograph, play Basketball and Video Games, Design stuff.
+                `
+              }
+            </div>
+           </div>
+            <div className="flex flex-col gap-3 w-[50%] max-[767px]:w-[100%] justify-center items-center">
+              <div className="flex  flex-col p-2 w-[100%] h-[190px] hover:scale-[101%] duration-200 rounded-xl bg-white/20 hover:bg-[#22a2f8] shadow-lg ring-1 ring-black/5">
+                <div className="flex w-1/1 gap-1 justify-start">
+                  <div className="duration-200 hover:border-white aspect-square w-[50px] border-2 border-black bg-contain bg-center bg-no-repeat rounded-full bg-[url('./images/me.jpg')]"></div>
+                  <div className="flex flex-col justify-center">
+                    <div className="leading-tight" >Rishi Raj</div>
+                    <div className=" hover:underline duration-200 leading-tight text-[#cfcece]" >rishirajbdev</div>
+                  </div>
+                </div>
+                <div></div>
+              </div>
+              <div className="w-[100%] h-[390px] hover:scale-[101%] duration-100 rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5"></div>
+            </div>
+          </div>
+           
+        </div>
+      <div className="flex w-[100%] flex-col justify-center items-center">
           <h1 className="my-6 max-[767px]:text-2xl min-[768px]:text-4xl">
             My Projects
           </h1>
