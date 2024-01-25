@@ -1,6 +1,7 @@
 "use client";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { motion } from "framer-motion";
+import axios from "axios"
 import {
   FaRegEye,
   FaRegMoon,
@@ -14,6 +15,21 @@ import appleclonse from "./images/appleclone.JPG";
 
 export default function Home() {
   const [theme, settheme] = useState("dark");
+  const [github, setgithub] = useState({});
+  const customConfig = {
+    headers: {
+    'Content-Type': 'application/json'
+    },
+};
+  useEffect(() => {
+    const githubApi=async()=>{
+      const res=await axios.get("https://api.github.com/users/Rishi1314",customConfig)
+      setgithub(res);
+      console.log(res);
+    }
+    githubApi();
+  },[])
+  
   const projects = [
     {
       projectTile: "ToShare",
@@ -230,7 +246,9 @@ export default function Home() {
                   <span>#100DaysOfCode</span>
                 </div>
               </div>
-              <div className="w-[100%] h-[395px] hover:scale-[101%] duration-100 rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5"></div>
+              <div className="w-[100%] h-[395px] hover:scale-[101%] duration-100 rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5">
+                    {/* <div className={`duration-200 hover:border-white aspect-square w-[50px] border-2 border-black bg-contain bg-center bg-no-repeat rounded-full ${bg-[url('./images/me.jpg')]}`}></div> */}
+              </div>
             </div>
           </div>
            
@@ -239,69 +257,78 @@ export default function Home() {
           <h1 className="my-6 max-[767px]:text-2xl min-[768px]:text-4xl">
             My Projects
           </h1>
-          <div className="relative flex flex-wrap gap-6 max-[767px]:w-[90%] min-[768px]:w-1/2">
-            <a href="https://appleclone-gilt.vercel.app" target="blank">
-            <div className="shadow-[0_8px_30px_rgb(0,0,0,0.12)] text-center flex flex-col relative overflow-hidden rounded-[20px] bg-black pt-20
-             min-[768px]:w-[700px] min-[768px]:h-[400px]
-             max-[767px]:w-[100%]
-            ">
-              <motion.video autoPlay muted className="z-0">
-                <source src="/iphoneherovideo.mp4" type="video/mp4" />
-              </motion.video>
-              <div className="flex flex-col z-1">
-                <span className="text-2xl w-full max-[767px]:text-[5vw] absolute top-0  font-lexend text-[#3a75f5]">
-                  {"Iphone "}
-                  <span className=" text-[#5689f8]">Website</span>
-                </span>
-                <span className="w-full max-[767px]:text-[3vw] absolute top-6 ">
-                  Built using NextJS and Framer-Motion
-                </span>
+          <div className="flex flex-wrap gap-2 justify-center items-center">
+              <div className="gap-2 flex flex-col items-center w-[400px] h-[450px] rounded-lg border border-white bg-black/20 shadow-lg ring-1 ring-black/5 ">
+                <div className=" text-2xl mt-2">MERN-Auth</div>
+                <a href="https://mernauth-ggum.onrender.com" className=" hover:scale-105 duration-200 rounded-md aspect-video w-[80%] bg-center bg-cover bg-no-repeat bg-[url('./images/mernAuth.png')]" target="blank"></a>
+                <div>Auth module that uses MERN and Google OAuth</div>
+                <div className="w-[80%] gap-2 flex text-center">
+                  <a href="https://mernauth-ggum.onrender.com" className="hover:scale-105 duration-200 w-[50%] text-black px-2 rounded-md text-xl bg-slate-200" target="blank">Visit</a>
+                  <a href="https://github.com/Rishi1314/mernAuth" className="hover:scale-105 duration-200 w-[50%] text-white px-2 rounded-md text-xl bg-orange-400" target="blank">Github</a>
+                </div>
+                <div className=" w-[80%] items-center justify-center flex flex-wrap gap-2">
+                  <div className=" bg-slate-600 px-2 rounded-md">ReactJS</div>
+                  <div className=" bg-slate-600 px-2 rounded-md">TailwindCSS</div>
+                  <div className=" bg-slate-600 px-2 rounded-md">Redux-Toolkit</div>
+                  <div className=" bg-slate-600 px-2 rounded-md">NodeJS</div>
+                  <div className=" bg-slate-600 px-2 rounded-md">ExpressJS</div>
+                  <div className=" bg-slate-600 px-2 rounded-md">MongoDB</div>
+                  <div className=" bg-slate-600 px-2 rounded-md">JsonWebToken</div>
+                </div>
+                <div className="flex gap-2">
+                <div className=" rounded-md px-2 bg-green-400 justify-self-end">
+                    Completed
+                </div>
+                <div className=" rounded-md px-2 bg-sky-950 justify-self-end">
+                    Full-Stack
+                </div>
+                </div>
               </div>
-            </div>
-            </a>
-            <a href="https://toshare.vercel.app" target="blank">
-            <div className="shadow-[0_8px_30px_rgb(0,0,0,0.12)] 
-             min-[768px]:w-[700px] min-[768px]:min-h-[400px]
-             max-[767px]:min-w-[90vw] max-[767px]:h-[30vh]
-            
-            justify-center items-center flex flex-col relative overflow-hidden rounded-[20px] bg-[#FAFAFA] pt-20">
-              
-              <motion.div 
-            transition={{
-              duration: 1,
-              // delay: 4,
-            }}
-            initial={{
-              x:"100%"
-            }}
-            whileInView={{
-              x:"0%"
-            }} viewport={{ once: true }} 
-            className="absolute bottom-0 bg-[url('./images/toshare.JPG')] 
-            bg-contain bg-bottom bg-no-repeat 
-            rounded-[20px] 
-            w-[100%]
-            min-h-[100%]
-          "></motion.div>
-            <div className="absolute top-0 flex flex-col text-center text-black z-2 mb-1">
-                <span className="text-4xl max-[767px]:text-[5vw] font-lexend text-[#69ADFA] leading-none">ToShare</span>
-                <span className="max-[767px]:text-[3vw] font-mukta">Decentralized File Sharing.</span>
+              <div className="gap-2 flex flex-col items-center w-[400px] h-[450px] rounded-lg border border-white bg-black/20 shadow-lg ring-1 ring-black/5 ">
+                <div className=" text-2xl mt-2 ">ToShare</div>
+                <a href="https://toshare.vercel.app" className=" hover:scale-105 duration-200 rounded-md aspect-video w-[80%] bg-center bg-cover bg-no-repeat bg-[url('./images/toshare.JPG')]" target="blank"></a>
+                <div>Decentralized File Sharing using IPFS</div>
+                <div className="w-[80%] flex text-center">
+                  <a href="https://toshare.vercel.app" className="hover:scale-105 duration-200 w-[100%] text-black px-2 rounded-md text-xl bg-slate-200" target="blank">Visit</a>
+                </div>
+                <div className=" w-[80%] items-center justify-center flex flex-wrap gap-2">
+                  <div className=" bg-slate-600 px-2 rounded-md">ReactJS</div>
+                  <div className=" bg-slate-600 px-2 rounded-md">Web3Storage</div>
+                  <div className=" bg-slate-600 px-2 rounded-md">IPFS</div>
+                  <div className=" bg-slate-600 px-2 rounded-md">Firebase</div>
+                  <div className=" bg-slate-600 px-2 rounded-md">Framer-Motion</div>
+                </div>
+                <div className="flex gap-2">
+                <div className=" rounded-md px-2 bg-green-400 justify-self-end">
+                    Completed
+                </div>
+                <div className=" rounded-md px-2 bg-sky-950 justify-self-end">
+                    Full-Stack
+                </div>
+                </div>
               </div>
-              {/* <motion.div
-              transition={{
-                duration: 1,
-                // delay: 4,
-              }}
-              initial={{
-                y:400
-              }}
-              whileInView={{
-                y:100
-              }} viewport={{ once: true }}
-              className="absolute bottom-0 left-0 bg-[url('./images/tosharemobile.png')] bg-contain bg-center bg-no-repeat w-[200px] h-[400px]"></motion.div> */}
-            </div>
-            </a>
-
+              <div className="gap-2 flex flex-col items-center w-[400px] h-[450px] rounded-lg border border-white bg-black/20 shadow-lg ring-1 ring-black/5 ">
+                <div className=" text-2xl mt-2 ">IPhone Website</div>
+                <a href="https://appleclone-gilt.vercel.app/" className=" hover:scale-105 duration-200 rounded-md aspect-video w-[80%] bg-center bg-cover bg-no-repeat bg-[url('./images/appleclone.JPG')]" target="blank"></a>
+                <div>Aesthetic Website for IPhone</div>
+                <div className="w-[80%] gap-2 flex text-center">
+                  <a href="https://appleclone-gilt.vercel.app/" className="hover:scale-105 duration-200 w-[100%] text-black px-2 rounded-md text-xl bg-slate-200" target="blank">Visit</a>
+                  <a href="https://github.com/Rishi1314/apple-website-nextJS-clone" className="hover:scale-105 duration-200 w-[100%] text-white px-2 rounded-md text-xl bg-orange-400" target="blank">Visit</a>
+                </div>
+                <div className=" w-[80%] items-center justify-center flex flex-wrap gap-2">
+                  <div className=" bg-slate-600 px-2 rounded-md">ReactJS</div>
+                  <div className=" bg-slate-600 px-2 rounded-md">NextJS</div>
+                  <div className=" bg-slate-600 px-2 rounded-md">Framer-Motion</div>
+                </div>
+                <div className="flex gap-2">
+                <div className=" rounded-md px-2 bg-green-400 justify-self-end">
+                    Completed
+                </div>
+                <div className=" rounded-md px-2 bg-cyan-600 justify-self-end">
+                    Front-End
+                </div>
+                </div>
+              </div>
             
           </div>
         </div>
