@@ -94,7 +94,7 @@ export default function Home() {
             // delay: 3,
           }}
           animate={{ x: 0 }} className="flex flex-col mt-[50%] absolute w-[80%] text-white 
-            font-lexend p-2 text-2xl">
+            font-lexend p-2 text-2xl min-[768px]:hidden">
               Hey, There! I am a Developer/Builder based out of Hyderabad, India.
         </motion.div>
         <motion.div
