@@ -76,7 +76,7 @@ export default function Home() {
         className={`
         ${theme === "dark" ? "bg-black" : "bg-white"}
         w-full
-        min-h-screen relative overflow-hidden
+        min-h-screen flex justify-center overflow-hidden
         max-[767px]:h-[100vh]
         `}
       >
@@ -88,6 +88,15 @@ export default function Home() {
             <FaRegMoon />
           </button>
         </div> */}
+        <motion.div initial={{ x: 300 }}
+          transition={{
+            duration: 1,
+            // delay: 3,
+          }}
+          animate={{ x: 0 }} className="flex flex-col mt-[50%] absolute w-[80%] text-white 
+            font-lexend p-2 text-2xl">
+              Hey, There! I am a Developer/Builder based out of Hyderabad, India.
+        </motion.div>
         <motion.div
           initial={{ y: 100 }}
           transition={{
@@ -109,8 +118,8 @@ export default function Home() {
             }}
             animate={{ x: "0%" }}
             className=" 
-            max-[767px]:text-[18vw] 
-            max-[767px]:top-[30%]
+            max-[767px]:hidden
+            
             min-[768px]:text-[200px] absolute  
             min-[768px]:top-0 min-[768px]:right-0 text-transparent stroke-white	outlined 
             font-mukta">
@@ -124,8 +133,8 @@ export default function Home() {
             }}
             animate={{ y: "0%" }}
             className="
-            max-[767px]:top-[41%]
-            max-[767px]:text-[15vw] 
+            max-[767px]:hidden
+            
             min-[768px]:top-[20%] min-[768px]:left-10 
             min-[768px]:text-[100px] absolute
              bg-white text-black 
@@ -141,8 +150,8 @@ export default function Home() {
             }}
             animate={{ x: "0%" }}
             className="
-            max-[767px]:top-[51%]
-            max-[767px]:text-[15vw] 
+            max-[767px]:hidden
+            
             min-[768px]:text-[150px] absolute 
             min-[768px]:top-[50%] min-[768px]:left-0 text-white 
             font-lexend  w-full"
@@ -158,8 +167,8 @@ export default function Home() {
             }}
             animate={{ x: "0%" }}
             className=" 
-            max-[767px]:top-[61%]
-            max-[767px]:text-[7vw] 
+            max-[767px]:hidden
+           
             min-[768px]:text-[120px] 
             min-[768px]:right-0 min-[768px]:top-[70%] 
             absolute 
@@ -209,7 +218,7 @@ export default function Home() {
       <div className="items-center justify-center flex flex-col text-white bg-neutral-900	">
         <div className="flex w-[100%]  flex-col py-10 justify-center items-center" >
           <div className="flex max-[767px]:flex-col w-[80%] gap-3">
-          <div class="hover:scale-[101%] duration-100 flex flex-col justify-center items-center isolate aspect-square w-[50%] max-[767px]:w-[100%]  rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5">
+          <div class="p-2 hover:scale-[101%] duration-100 flex flex-col justify-center items-center isolate aspect-square w-[50%] max-[767px]:w-[100%]  rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5">
             <div className="w-[80%] font-lexend max-[767px]:text-3xl text-6xl">
               Hi, My name is Rishi Raj B.
             </div>
@@ -246,8 +255,9 @@ export default function Home() {
                   <span>#100DaysOfCode</span>
                 </div>
               </div>
-              <div className="w-[100%] h-[395px] hover:scale-[101%] duration-100 rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5">
+              <div className="flex justify-center items-center w-[100%] h-[395px] hover:scale-[101%] duration-100 rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5">
                     {/* <div className={`duration-200 hover:border-white aspect-square w-[50px] border-2 border-black bg-contain bg-center bg-no-repeat rounded-full ${bg-[url('./images/me.jpg')]}`}></div> */}
+                    <div className="w-[80%] font-lexend max-[767px]:text-3xl text-6xl">{`Currently learning Typescript and Developing "Flex"`}</div>
               </div>
             </div>
           </div>
@@ -258,10 +268,10 @@ export default function Home() {
             My Projects
           </h1>
           <div className="flex flex-wrap gap-2 justify-center items-center">
-              <div className="gap-2 flex flex-col items-center w-[400px] h-[450px] rounded-lg border border-white bg-black/20 shadow-lg ring-1 ring-black/5 ">
+              <div className="gap-2 flex flex-col items-center max-[767px]:w-[90%] w-[30%] h-[450px] rounded-lg border border-white bg-black/20 shadow-lg ring-1 ring-black/5 ">
                 <div className=" text-2xl mt-2">MERN-Auth</div>
                 <a href="https://mernauth-ggum.onrender.com" className=" hover:scale-105 duration-200 rounded-md aspect-video w-[80%] bg-center bg-cover bg-no-repeat bg-[url('./images/mernAuth.png')]" target="blank"></a>
-                <div>Auth module that uses MERN and Google OAuth</div>
+                <div className="w-[80%]">Auth module that uses MERN and Google OAuth</div>
                 <div className="w-[80%] gap-2 flex text-center">
                   <a href="https://mernauth-ggum.onrender.com" className="hover:scale-105 duration-200 w-[50%] text-black px-2 rounded-md text-xl bg-slate-200" target="blank">Visit</a>
                   <a href="https://github.com/Rishi1314/mernAuth" className="hover:scale-105 duration-200 w-[50%] text-white px-2 rounded-md text-xl bg-orange-400" target="blank">Github</a>
@@ -284,10 +294,10 @@ export default function Home() {
                 </div>
                 </div>
               </div>
-              <div className="gap-2 flex flex-col items-center w-[400px] h-[450px] rounded-lg border border-white bg-black/20 shadow-lg ring-1 ring-black/5 ">
+              <div className="gap-2 flex flex-col items-center max-[767px]:w-[90%] w-[30%] h-[450px] rounded-lg border border-white bg-black/20 shadow-lg ring-1 ring-black/5 ">
                 <div className=" text-2xl mt-2 ">ToShare</div>
                 <a href="https://toshare.vercel.app" className=" hover:scale-105 duration-200 rounded-md aspect-video w-[80%] bg-center bg-cover bg-no-repeat bg-[url('./images/toshare.JPG')]" target="blank"></a>
-                <div>Decentralized File Sharing using IPFS</div>
+                <div className="w-[80%]">Decentralized File Sharing using IPFS</div>
                 <div className="w-[80%] flex text-center">
                   <a href="https://toshare.vercel.app" className="hover:scale-105 duration-200 w-[100%] text-black px-2 rounded-md text-xl bg-slate-200" target="blank">Visit</a>
                 </div>
@@ -307,10 +317,10 @@ export default function Home() {
                 </div>
                 </div>
               </div>
-              <div className="gap-2 flex flex-col items-center w-[400px] h-[450px] rounded-lg border border-white bg-black/20 shadow-lg ring-1 ring-black/5 ">
+              <div className="gap-2 flex flex-col items-center max-[767px]:w-[90%] w-[30%] h-[450px] rounded-lg border border-white bg-black/20 shadow-lg ring-1 ring-black/5 ">
                 <div className=" text-2xl mt-2 ">IPhone Website</div>
                 <a href="https://appleclone-gilt.vercel.app/" className=" hover:scale-105 duration-200 rounded-md aspect-video w-[80%] bg-center bg-cover bg-no-repeat bg-[url('./images/appleclone.JPG')]" target="blank"></a>
-                <div>Aesthetic Website for IPhone</div>
+                <div className="w-[80%]">Aesthetic Website for IPhone</div>
                 <div className="w-[80%] gap-2 flex text-center">
                   <a href="https://appleclone-gilt.vercel.app/" className="hover:scale-105 duration-200 w-[100%] text-black px-2 rounded-md text-xl bg-slate-200" target="blank">Visit</a>
                   <a href="https://github.com/Rishi1314/apple-website-nextJS-clone" className="hover:scale-105 duration-200 w-[100%] text-white px-2 rounded-md text-xl bg-orange-400" target="blank">Visit</a>
@@ -320,7 +330,7 @@ export default function Home() {
                   <div className=" bg-slate-600 px-2 rounded-md">NextJS</div>
                   <div className=" bg-slate-600 px-2 rounded-md">Framer-Motion</div>
                 </div>
-                <div className="flex gap-2">
+                <div className="flex  gap-2">
                 <div className=" rounded-md px-2 bg-green-400 justify-self-end">
                     Completed
                 </div>
