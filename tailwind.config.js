@@ -17,6 +17,7 @@ module.exports = {
       homemadeApple: ['Homemade Apple', 'cursive'],
       mukta: ['Mukta', 'sans-serif'],
       lexend: ['Lexend', 'sans-serif'],
+      seewead: ['Seaweed Script', 'cursive'],
     },
       screens: {
         'sm': '640px',

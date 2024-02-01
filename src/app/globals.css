@@ -1,3 +1,48 @@
+.floatJuice{
+  animation-name: floating1;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+
+@keyframes floating1 {
+  0% { -webkit-transform: 
+    translate(0em,  0em)  
+    perspective(1000px)
+    rotate(45deg)
+       }
+  50%  { -webkit-transform: translate(0em,  1em)  perspective(1000px)
+    rotate(45deg)
+       }
+  100%   { -webkit-transform: translate(0em, 0em)  perspective(1000px)
+    rotate(45deg)
+       } 
+}
+.floatPc{
+  animation-name: floating2;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: none;
+}
+
+
+
+@keyframes floating2 {
+  0% { -webkit-transform: 
+    translate(0em,  1em)  
+    perspective(1000px)
+    rotate(-45deg)
+       }
+  50%  { -webkit-transform: translate(0em,  0em)  perspective(1000px)
+    rotate(-45deg)
+       }
+  100%   { -webkit-transform: translate(0em, 1em)  perspective(1000px)
+    rotate(-45deg)
+       } 
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +50,10 @@
 @font-face {
     font-family: "Homemade Apple";
     src: url("./font//HomemadeApple-Regular.ttf");
+  }
+@font-face {
+    font-family: "Seaweed Script";
+    src: url("./font/SeaweedScript-Regular.ttf");
   }
 @font-face {
     font-family: "Lexend";
