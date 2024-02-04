@@ -72,6 +72,14 @@ background: #292929;
 box-shadow:  2px 2px 10px #272727a2,
              -2px -2px 10px #2b2b2b91;
 }
+.projectCard{
+  border:#ffffff80 2px solid;
+  border-radius: 4px;
+background: #1c1c1c;
+box-shadow:  2px 2px 10px #272727a2,
+             -2px -2px 10px #2b2b2b91;
+}
+
 
 @keyframes floating2 {
   0% { -webkit-transform: 

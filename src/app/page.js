@@ -17,7 +17,17 @@ import circle from "./images/circle.png";
 import juice from "./images/juice.png";
 import pc from "./images/pc.png";
 import Image from "next/image";
-import { SiExpress, SiJavascript, SiMongodb, SiNextdotjs, SiNodedotjs, SiPython, SiReact, SiTailwindcss, SiTypescript } from "react-icons/si";
+import {
+  SiExpress,
+  SiJavascript,
+  SiMongodb,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPython,
+  SiReact,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
 
 export default function Home() {
   const [theme, settheme] = useState("dark");
@@ -108,7 +118,7 @@ export default function Home() {
         </div>
         <div className="bg-[url('./images/mepg.png')] bg-cover bg-center bg-no-repeat"></div>
         <Image src={mepg} alt="me" className="z-10" />
-        <Image
+        {/* <Image
           src={juice}
           alt="me"
           className="z-1 floatJuice absolute top-0 -left-10 w-[6rem] duration-100 origin-bottom"
@@ -117,7 +127,7 @@ export default function Home() {
           src={pc}
           alt="me"
           className="z-1 floatPc absolute top-0 right-0 w-[6rem] duration-100 origin-bottom"
-        />
+        /> */}
         {/* <div className={`flex ${theme==="dark"?"flex-row":"flex-row-reverse"} fixed top-1 right-1`}>
           <button className="text-2xl	rounded-full bg-orange-500	text-white	 p-1 m-1" onClick={()=>{settheme("light")}}>
             <FaRegSun />
@@ -171,15 +181,8 @@ export default function Home() {
                 duration: 1,
                 // delay: 4,
               }}
-              initial={{
-                x: -100,
-                // opacity: 0.5
-              }}
-              whileInView={{
-                x: 0,
-                opacity: 1,
-              }}
-              viewport={{ once: true }}
+              initial={{ x: "-100%", opacity: 0 }}
+              animate={{ x: "0%", opacity: 1 }}
               class="rounded-[40px] profileCard p-2 hover:scale-[101%] duration-100 flex flex-col justify-center items-center isolate aspect-square w-[50%] max-[767px]:w-[100%]"
             >
               <div className="w-[80%] font-lexend max-[767px]:text-3xl text-6xl">
@@ -272,7 +275,7 @@ export default function Home() {
               React
             </div>
             <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 text-xl max-[767px]:text-sm">
-            <SiTailwindcss />
+              <SiTailwindcss />
               TailwindCSS
             </div>
             <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 text-xl max-[767px]:text-sm">
@@ -313,7 +316,7 @@ export default function Home() {
           <h1 className="font-seewead my-6 max-[767px]:text-2xl min-[768px]:text-4xl">
             My Projects
           </h1>
-          <div className="flex flex-wrap gap-2 justify-center items-center">
+          <div className="flex flex-wrap gap-4 justify-center items-center">
             <motion.div
               transition={{
                 duration: 1,
@@ -326,7 +329,68 @@ export default function Home() {
                 opacity: 1,
               }}
               viewport={{ once: true }}
-              className="  gap-2 flex flex-col items-center max-[767px]:w-[90%] w-[30%] h-[450px] rounded-lg border border-white bg-black/20 shadow-lg ring-1 ring-black/5 "
+              className=" p-2 gap-2 flex flex-col items-center max-[767px]:w-[90%] w-[30%] h-[450px] rounded-lg projectCard  hover:scale-105 duration-200"
+            >
+              <div className=" text-2xl mt-2">Flex</div>
+              <a
+                href="https://flexfordev.onrender.com/"
+                className=" hover:scale-105 duration-200 rounded-md aspect-video w-[80%] bg-center bg-cover bg-no-repeat bg-[url('./images/flex.JPG')]"
+                target="blank"
+              ></a>
+              <div className="w-[80%]">
+                A Website to flex your projects and skills as a developer.
+              </div>
+              <div className="w-[80%] gap-2 flex text-center">
+                <a
+                  href="https://mernauth-ggum.onrender.com"
+                  className="hover:scale-105 duration-200 w-[50%] text-black px-2 rounded-md text-xl bg-slate-200"
+                  target="blank"
+                >
+                  Visit
+                </a>
+                <a
+                  href="https://github.com/Rishi1314/mernAuth"
+                  className="hover:scale-105 duration-200 w-[50%] text-white px-2 rounded-md text-xl bg-orange-400"
+                  target="blank"
+                >
+                  Github
+                </a>
+              </div>
+              <div className=" w-[80%] items-center justify-center flex flex-wrap gap-2">
+                <div className=" bg-slate-600 px-2 rounded-md">ReactJS</div>
+                <div className=" bg-slate-600 px-2 rounded-md">TailwindCSS</div>
+                <div className=" bg-slate-600 px-2 rounded-md">
+                  Redux-Toolkit
+                </div>
+                <div className=" bg-slate-600 px-2 rounded-md">NodeJS</div>
+                <div className=" bg-slate-600 px-2 rounded-md">ExpressJS</div>
+                <div className=" bg-slate-600 px-2 rounded-md">MongoDB</div>
+                <div className=" bg-slate-600 px-2 rounded-md">
+                  JsonWebToken
+                </div>
+              </div>
+              <div className="flex gap-2">
+                <div className=" rounded-md px-2 bg-amber-300 justify-self-end">
+                  Ongoing
+                </div>
+                <div className=" rounded-md px-2 bg-sky-950 justify-self-end">
+                  Full-Stack
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              transition={{
+                duration: 1,
+                // delay: 4,
+              }}
+              initial={{
+                opacity: 0.5,
+              }}
+              whileInView={{
+                opacity: 1,
+              }}
+              viewport={{ once: true }}
+              className=" p-2 gap-2 flex flex-col items-center max-[767px]:w-[90%] w-[30%] h-[450px] rounded-lg projectCard hover:scale-105 duration-200 "
             >
               <div className=" text-2xl mt-2">MERN-Auth</div>
               <a
@@ -387,7 +451,7 @@ export default function Home() {
                 opacity: 1,
               }}
               viewport={{ once: true }}
-              className="gap-2 flex flex-col items-center max-[767px]:w-[90%] w-[30%] h-[450px] rounded-lg border border-white bg-black/20 shadow-lg ring-1 ring-black/5 "
+              className="gap-2 p-2 flex flex-col items-center max-[767px]:w-[90%] w-[30%] h-[450px] rounded-lg projectCard hover:scale-105 duration-200 "
             >
               <div className=" text-2xl mt-2 ">ToShare</div>
               <a
@@ -437,7 +501,7 @@ export default function Home() {
                 opacity: 1,
               }}
               viewport={{ once: true }}
-              className="gap-2 flex flex-col items-center max-[767px]:w-[90%] w-[30%] h-[450px] rounded-lg border border-white bg-black/20 shadow-lg ring-1 ring-black/5 "
+              className="gap-2 p-2 flex flex-col items-center max-[767px]:w-[90%] w-[30%] h-[450px] rounded-lg projectCard hover:scale-105 duration-200 "
             >
               <div className=" text-2xl mt-2 ">IPhone Website</div>
               <a
