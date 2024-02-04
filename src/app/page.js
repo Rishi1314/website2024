@@ -17,6 +17,7 @@ import circle from "./images/circle.png";
 import juice from "./images/juice.png";
 import pc from "./images/pc.png";
 import Image from "next/image";
+import { SiExpress, SiJavascript, SiMongodb, SiNextdotjs, SiNodedotjs, SiPython, SiReact, SiTailwindcss, SiTypescript } from "react-icons/si";
 
 export default function Home() {
   const [theme, settheme] = useState("dark");
@@ -135,13 +136,9 @@ export default function Home() {
           className={`
           max-[767px]:top-0 max-[767px]:left-0 min-[768px]:top-1/3 min-[768px]:left-0
           
-          max-[767px]:py-3 max-[767px]:px-5 max-[767px]:border-t-0 min-[768px]:flex-col min-[768px]:border-l-0
+          max-[767px]:py-3 max-[767px]:px-5 max-[767px]:border-t-0 min-[768px]:flex-col 
           
-           ${
-             theme === "dark"
-               ? "text-white bg-black border-sky-400"
-               : "text-black border-black"
-           } flex justify-center items-center	  z-10 fixed gap-4 border-2 py-6 px-3 rounded-r-lg`}
+           bg-black text-white socialBanner flex justify-center items-center	  z-10 fixed gap-4  py-6 px-3 rounded-r-lg`}
         >
           <a
             className="text-2xl hover:scale-150 hover:text-orange-800 duration-150"
@@ -167,8 +164,8 @@ export default function Home() {
         </motion.div>
       </div>
       <div className="items-center justify-center flex flex-col text-white 	">
-        <div className=" bg-right bg-contain bg-no-repeat  flex w-[100%]  flex-col py-10 justify-center items-center overflow-hidden relative">
-          <div className="flex max-[767px]:flex-col w-[80%] gap-3">
+        <div className=" min-h-[100vh]  flex w-[100%]  flex-col py-10 justify-center items-center overflow-hidden relative">
+          <div className=" flex max-[767px]:flex-col w-[80%] gap-3">
             <motion.div
               transition={{
                 duration: 1,
@@ -183,7 +180,7 @@ export default function Home() {
                 opacity: 1,
               }}
               viewport={{ once: true }}
-              class="p-2 hover:scale-[101%] duration-100 flex flex-col justify-center items-center isolate aspect-square w-[50%] max-[767px]:w-[100%]  rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5"
+              class="rounded-[40px] profileCard p-2 hover:scale-[101%] duration-100 flex flex-col justify-center items-center isolate aspect-square w-[50%] max-[767px]:w-[100%]"
             >
               <div className="w-[80%] font-lexend max-[767px]:text-3xl text-6xl">
                 Hi, My name is Rishi Raj B.
@@ -210,7 +207,7 @@ export default function Home() {
                   opacity: 1,
                 }}
                 viewport={{ once: true }}
-                className="flex  flex-col p-4 w-[100%] h-[195px] hover:scale-[101%] duration-200 rounded-xl bg-white/20 hover:bg-[#22a2f8] shadow-lg ring-1 ring-black/5"
+                className="rounded-[20px] profileCard flex  flex-col p-4 w-[100%] h-[195px] hover:scale-[101%] duration-200  hover:bg-[#22a2f8]"
               >
                 <div className="flex w-1/1 justify-between">
                   <div className="flex w-1/1 gap-1 justify-start">
@@ -254,7 +251,7 @@ export default function Home() {
                   opacity: 1,
                 }}
                 viewport={{ once: true }}
-                className="flex justify-center items-center w-[100%] h-[395px] hover:scale-[101%] duration-100 rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5"
+                className="rounded-[20px] profileCard flex justify-center items-center w-[100%] h-[395px] hover:scale-[101%] duration-100"
               >
                 {/* <div className={`duration-200 hover:border-white aspect-square w-[50px] border-2 border-black bg-contain bg-center bg-no-repeat rounded-full ${bg-[url('./images/me.jpg')]}`}></div> */}
                 <div className="w-[80%] font-lexend max-[767px]:text-3xl text-6xl">{`Currently learning Typescript and Developing "Flex"`}</div>
@@ -262,9 +259,58 @@ export default function Home() {
             </div>
           </div>
         </div>
-        
-        <div className=" bg-right bg-contain bg-no-repeat flex w-[100%] flex-col justify-center items-center">
-          <h1 className="my-6 max-[767px]:text-2xl min-[768px]:text-4xl">
+        <div
+          id="Skills"
+          className="relative h-[100vh] w-[100%] flex flex-col  items-center"
+        >
+          <h1 className="font-seewead my-6 max-[767px]:text-2xl min-[768px]:text-4xl">
+            Skills
+          </h1>
+          <div className="profileCard skills flex flex-wrap gap-4 items-center justify-center max-[767px]:w-[80%] w-[50%] p-10 rounded-lg">
+            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 max-[767px]:text-sm text-xl">
+              <SiReact />
+              React
+            </div>
+            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 text-xl max-[767px]:text-sm">
+            <SiTailwindcss />
+              TailwindCSS
+            </div>
+            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 text-xl max-[767px]:text-sm">
+              <SiJavascript />
+              Javascript
+            </div>
+            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 text-xl max-[767px]:text-sm">
+              <SiTypescript />
+              Typescript
+            </div>
+            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 text-xl max-[767px]:text-sm">
+              <SiNextdotjs />
+              Next
+            </div>
+            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 text-xl max-[767px]:text-sm">
+              <SiNodedotjs />
+              NodeJS
+            </div>
+            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 text-xl max-[767px]:text-sm">
+              <SiNodedotjs />
+              NodeJS
+            </div>
+            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 text-xl max-[767px]:text-sm">
+              <SiMongodb />
+              MongoDB
+            </div>
+            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 text-xl max-[767px]:text-sm">
+              <SiPython />
+              Python
+            </div>
+            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 text-xl max-[767px]:text-sm">
+              <SiExpress />
+              Express
+            </div>
+          </div>
+        </div>
+        <div className=" flex w-[100%] flex-col justify-center items-center">
+          <h1 className="font-seewead my-6 max-[767px]:text-2xl min-[768px]:text-4xl">
             My Projects
           </h1>
           <div className="flex flex-wrap gap-2 justify-center items-center">
