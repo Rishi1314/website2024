@@ -4,7 +4,21 @@
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
 }
-
+body{
+  &::-webkit-scrollbar {
+    width: 0em;
+    height: 0em;
+   }
+ 
+   &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.552);
+    border-radius: 3px;
+ 
+    &:hover {
+     background: rgba(255,255,255,.2);
+    }
+   }
+}
 
 @keyframes floating1 {
   0% { -webkit-transform: 
@@ -52,17 +66,22 @@
     animation-timing-function: ease-in-out;
     animation-fill-mode: none;
 }
-.skills{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+
 .profileCard{
   
 background: #121212;
-box-shadow:  6px 6px 66px #111111,
-             -6px -6px 66px #131313;
+box-shadow:  2px 2px 6px #5d5d5d,
+             -2px -2px 6px #4a4a4a;
+             border: white 2px solid;
+             
+             
+}
+.xCard{
+  
+background: #121212;
+/* box-shadow:  6px 6px 66px #ffffff,
+             -6px -6px 66px #a70000; */
+             z-index: 2;
              border: white 2px solid;
 }
 .skillsCard{
@@ -79,7 +98,9 @@ background: #1c1c1c;
 box-shadow:  2px 2px 10px #272727a2,
              -2px -2px 10px #2b2b2b91;
 }
-
+html {
+  scroll-behavior: smooth;
+ }
 
 @keyframes floating2 {
   0% { -webkit-transform: 

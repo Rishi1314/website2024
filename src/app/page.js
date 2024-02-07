@@ -28,6 +28,7 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
+import GitHubCalendar from "react-github-calendar";
 
 export default function Home() {
   const [theme, settheme] = useState("dark");
@@ -93,31 +94,27 @@ export default function Home() {
   return (
     <main className={`bg-neutral-900 overflow-hidden`}>
       <div
+        id="home"
         className={`
         relative
         ${theme === "dark" ? "bg-white" : "bg-white"}
         w-full
-        bg-cover bg-center bg-no-repeat  rounded-b-[50px]
+        bg-cover bg-center bg-no-repeat  min-[767px]:rounded-b-[50px]
         min-h-screen  overflow-hidden
-        max-[767px]:h-[100vh] max-[768px]:flex-col max-[768px]:justify-end justify-center items-center
+        max-[767px]:h-[100vh] flex-col-reverse justify-center items-center
         flex min-[767px]:items-center min-[767px]:justify-center
         `}
       >
-        <div className="flex z-10 ">
-          <div className="font-lexend">I am</div>
-          <motion.div
-            transition={{
-              duration: 1,
-            }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="bg-contain bg-top bg-no-repeat bg-[url('./images/circle.png')]  font-seewead text-[800%] max-[767px]:text-[500%]"
-          >
-            Rishi Raj
-          </motion.div>
+        <div className="flex flex-col items-center z-10 ">
+          <div>
+            <div className="font-lexend">I am</div>
+            <div className=" font-lexend text-[6rem] max-[767px]:text-[3rem]">
+              Rishi Raj
+            </div>
+          </div>
+          <div className="max-[767px]:text-[0.6rem]">Developer * Builder * Problem-Solver</div>
         </div>
-        <div className="bg-[url('./images/mepg.png')] bg-cover bg-center bg-no-repeat"></div>
-        <Image src={mepg} alt="me" className="z-10" />
+        <Image src={mepg} alt="me" className="z-10 aspect-square w-[10rem]" />
         {/* <Image
           src={juice}
           alt="me"
@@ -128,16 +125,65 @@ export default function Home() {
           alt="me"
           className="z-1 floatPc absolute top-0 right-0 w-[6rem] duration-100 origin-bottom"
         /> */}
-        {/* <div className={`flex ${theme==="dark"?"flex-row":"flex-row-reverse"} fixed top-1 right-1`}>
-          <button className="text-2xl	rounded-full bg-orange-500	text-white	 p-1 m-1" onClick={()=>{settheme("light")}}>
-            <FaRegSun />
-          </button>
-          <button className="text-2xl	rounded-full bg-cyan-900 text-white	 p-1 m-1	" onClick={()=>{settheme("dark")}}>
-            <FaRegMoon />
-          </button>
-        </div> */}
+        <div className="fixed  flex top-0 w-[100%] justify-around z-10 bg-white/90 rounded-b-3xl items-center">
+          <div className="w-[25%]  flex justify-center">          <Image src={mepg} alt="me" className="z-10 w-[3rem] h-[3rem]" />
+</div>
+          <div className="font-lexend  flex-wrap w-[50%] justify-around flex">
+            <input
+              type="button"
+              value="Home"
+              className=" cursor-pointer"
+              onClick={() => {
+                document.getElementById("home").scrollIntoView();
+              }}
+            />
+            <input
+              type="button"
+              value="About"className=" cursor-pointer"
+              onClick={() => {
+                document.getElementById("about").scrollIntoView();
+              }}
+            />
+            <input
+              type="button"
+              value="Skills"className=" cursor-pointer"
+              onClick={() => {
+                document.getElementById("skills").scrollIntoView();
+              }}
+            />
+            <input
+              type="button"
+              value="Projects"className=" cursor-pointer"
+              onClick={() => {
+                document.getElementById("projects").scrollIntoView();
+              }}
+            />
+          </div>
+          <div
+            className={`flex ${
+              theme === "dark" ? "flex-row" : "flex-row-reverse"
+            } w-[25%] justify-center `}
+          >
+            <button
+              className="text-2xl	rounded-full bg-orange-500	text-white	 p-1 m-1"
+              onClick={() => {
+                settheme("light");
+              }}
+            >
+              <FaRegSun />
+            </button>
+            <button
+              className="text-2xl	rounded-full bg-cyan-900 text-white	 p-1 m-1	"
+              onClick={() => {
+                settheme("dark");
+              }}
+            >
+              <FaRegMoon />
+            </button>
+          </div>
+        </div>
 
-        <motion.div
+        {/*<motion.div
           transition={{
             duration: 1,
           }}
@@ -171,9 +217,9 @@ export default function Home() {
           >
             <FaXTwitter />
           </a>
-        </motion.div>
+        </motion.div>*/}
       </div>
-      <div className="items-center justify-center flex flex-col text-white 	">
+      <div id="about" className="items-center justify-center gap-2 flex flex-col text-white 	">
         <div className=" min-h-[100vh]  flex w-[100%]  flex-col py-10 justify-center items-center overflow-hidden relative">
           <div className=" flex max-[767px]:flex-col w-[80%] gap-3">
             <motion.div
@@ -183,7 +229,7 @@ export default function Home() {
               }}
               initial={{ x: "-100%", opacity: 0 }}
               animate={{ x: "0%", opacity: 1 }}
-              class="rounded-[40px] profileCard p-2 hover:scale-[101%] duration-100 flex flex-col justify-center items-center isolate aspect-square w-[50%] max-[767px]:w-[100%]"
+              class="rounded-[40px] profileCard p-2 hover:scale-[101%] duration-100 flex flex-col justify-center items-center isolate aspect-square w-[50%] max-[767px]:w-[100%] max-[767px]:h-[40vh]"
             >
               <div className="w-[80%] font-lexend max-[767px]:text-3xl text-6xl">
                 Hi, My name is Rishi Raj B.
@@ -210,7 +256,7 @@ export default function Home() {
                   opacity: 1,
                 }}
                 viewport={{ once: true }}
-                className="rounded-[20px] profileCard flex  flex-col p-4 w-[100%] h-[195px] hover:scale-[101%] duration-200  hover:bg-[#22a2f8]"
+                className="rounded-[20px] xCard flex  flex-col p-4 w-[100%] max-[767px]:h-[20vh]  h-[195px] hover:scale-[101%] duration-200  hover:bg-[#0d72ff]"
               >
                 <div className="flex w-1/1 justify-between">
                   <div className="flex w-1/1 gap-1 justify-start">
@@ -254,65 +300,63 @@ export default function Home() {
                   opacity: 1,
                 }}
                 viewport={{ once: true }}
-                className="rounded-[20px] profileCard flex justify-center items-center w-[100%] h-[395px] hover:scale-[101%] duration-100"
+                className="rounded-[20px] profileCard flex justify-center items-center w-[100%] h-[395px] max-[767px]:h-[40vh] hover:scale-[101%] duration-100"
               >
                 {/* <div className={`duration-200 hover:border-white aspect-square w-[50px] border-2 border-black bg-contain bg-center bg-no-repeat rounded-full ${bg-[url('./images/me.jpg')]}`}></div> */}
-                <div className="w-[80%] font-lexend max-[767px]:text-3xl text-6xl">{`Currently learning Typescript and Developing "Flex"`}</div>
+                <div className="w-[80%] font-lexend max-[767px]:text-3xl text-6xl"><GitHubCalendar username="rishi1314" /></div>
               </motion.div>
             </div>
           </div>
         </div>
         <div
-          id="Skills"
-          className="relative h-[100vh] w-[100%] flex flex-col  items-center"
-        >
-          <h1 className="font-seewead my-6 max-[767px]:text-2xl min-[768px]:text-4xl">
-            Skills
-          </h1>
-          <div className="profileCard skills flex flex-wrap gap-4 items-center justify-center max-[767px]:w-[80%] w-[50%] p-10 rounded-lg">
-            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 max-[767px]:text-sm text-xl">
+          id="skills"
+          className="min-h-[50vh] flex flex-col justify-center items-center"
+         >
+          
+          <div className="profileCard  max-[767px]:max-h[50vh]  flex  flex-wrap max-[767px]:p-2  p-4 gap-4 items-center justify-center max-[767px]:w-[90%] w-[50%]   rounded-lg">
+            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit max-[767px]:p-1 p-4 max-[767px]:text-sm text-xl">
               <SiReact />
               React
             </div>
-            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 text-xl max-[767px]:text-sm">
+            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 max-[767px]:p-1 text-xl max-[767px]:text-sm">
               <SiTailwindcss />
               TailwindCSS
             </div>
-            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 text-xl max-[767px]:text-sm">
+            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 max-[767px]:p-1 text-xl max-[767px]:text-sm">
               <SiJavascript />
               Javascript
             </div>
-            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 text-xl max-[767px]:text-sm">
+            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 max-[767px]:p-1 text-xl max-[767px]:text-sm">
               <SiTypescript />
               Typescript
             </div>
-            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 text-xl max-[767px]:text-sm">
+            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 max-[767px]:p-1 text-xl max-[767px]:text-sm">
               <SiNextdotjs />
               Next
             </div>
-            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 text-xl max-[767px]:text-sm">
+            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 max-[767px]:p-1 text-xl max-[767px]:text-sm">
               <SiNodedotjs />
               NodeJS
             </div>
-            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 text-xl max-[767px]:text-sm">
+            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 max-[767px]:p-1 text-xl max-[767px]:text-sm">
               <SiNodedotjs />
               NodeJS
             </div>
-            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 text-xl max-[767px]:text-sm">
+            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 max-[767px]:p-1 text-xl max-[767px]:text-sm">
               <SiMongodb />
               MongoDB
             </div>
-            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 text-xl max-[767px]:text-sm">
+            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 max-[767px]:p-1 text-xl max-[767px]:text-sm">
               <SiPython />
               Python
             </div>
-            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit p-4 text-xl max-[767px]:text-sm">
+            <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit  p-4 max-[767px]:p-1 text-xl max-[767px]:text-sm">
               <SiExpress />
               Express
             </div>
           </div>
         </div>
-        <div className=" flex w-[100%] flex-col justify-center items-center">
+        <div id="projects" className=" flex w-[100%] flex-col justify-center items-center">
           <h1 className="font-seewead my-6 max-[767px]:text-2xl min-[768px]:text-4xl">
             My Projects
           </h1>
