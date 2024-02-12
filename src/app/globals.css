@@ -4,6 +4,12 @@
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
 }
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
 body{
   &::-webkit-scrollbar {
     width: 0em;
@@ -39,7 +45,7 @@ body{
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
-    border-left: 0;
+    
 }
 
 /* @keyframes borderGlow {

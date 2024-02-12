@@ -112,9 +112,15 @@ export default function Home() {
               Rishi Raj
             </div>
           </div>
-          <div className="max-[767px]:text-[0.6rem]">Developer * Builder * Problem-Solver</div>
+          <div className="max-[767px]:text-[0.6rem]">
+            Developer * Builder * Problem-Solver
+          </div>
         </div>
-        <Image src={mepg} alt="me" className="z-10 profilePhoto aspect-square w-[10rem]" />
+        <Image
+          src={mepg}
+          alt="me"
+          className="z-10 profilePhoto aspect-square w-[10rem]"
+        />
         {/* <Image
           src={juice}
           alt="me"
@@ -125,10 +131,12 @@ export default function Home() {
           alt="me"
           className="z-1 floatPc absolute top-0 right-0 w-[6rem] duration-100 origin-bottom"
         /> */}
-        <div className="fixed  flex top-0 w-[100%] justify-around z-10 bg-white/90 rounded-b-3xl items-center">
-          <div className="w-[25%]  flex justify-center">          <Image src={mepg} alt="me" className="z-10 w-[3rem] h-[3rem]" />
-</div>
-          <div className="font-lexend  flex-wrap w-[50%] justify-around flex">
+        <div className="fixed  flex top-0 w-[100%] justify-around  z-10 bg-white/90 rounded-b-3xl items-center">
+          <div className="w-[25%]  flex justify-center max-[767px]:hidden">
+            {" "}
+            <Image src={mepg} alt="me" className="z-10 w-[3rem] h-[3rem]" />
+          </div>
+          <div className="font-mukta  flex-wrap w-[50%] max-[767px]:w-[100%] max-[767px]:text-xl gap-2  justify-around flex">
             <input
               type="button"
               value="Home"
@@ -139,39 +147,50 @@ export default function Home() {
             />
             <input
               type="button"
-              value="About"className=" cursor-pointer"
+              value="About"
+              className=" cursor-pointer"
               onClick={() => {
                 document.getElementById("about").scrollIntoView();
               }}
             />
             <input
               type="button"
-              value="Skills"className=" cursor-pointer"
+              value="Skills"
+              className=" cursor-pointer"
               onClick={() => {
                 document.getElementById("skills").scrollIntoView();
               }}
             />
             <input
               type="button"
-              value="Projects"className=" cursor-pointer"
+              value="Projects"
+              className=" cursor-pointer"
               onClick={() => {
                 document.getElementById("projects").scrollIntoView();
               }}
             />
           </div>
-          <div className="w-[25%] flex justify-center">
-          <label class="label">
-    <div class="toggle">
-        <input class="toggle-state" type="checkbox" name="check" value="check" onClick={() => {
-                settheme(!theme);
-              }}/>
-              <div className={`indicator  ${
-              theme ? " bg-blue-500" : "bg-orange-400 "
-            }`}></div>
-    </div>
-</label>
+          <div className="w-[25%] flex justify-center max-[767px]:hidden">
+            <label class="label">
+              <div class="toggle">
+                <input
+                  class="toggle-state"
+                  type="checkbox"
+                  name="check"
+                  value="check"
+                  onClick={() => {
+                    settheme(!theme);
+                  }}
+                />
+                <div
+                  className={`indicator  ${
+                    theme ? " bg-blue-500" : "bg-orange-400 "
+                  }`}
+                ></div>
+              </div>
+            </label>
           </div>
-         
+
           {/* <div
             className={`flex ${
               theme === "dark" ? "flex-row" : "flex-row-reverse"
@@ -196,18 +215,20 @@ export default function Home() {
           </div> */}
         </div>
 
-        {/*<motion.div
+        <motion.div
           transition={{
             duration: 1,
           }}
           initial={{ x: "-100%" }}
           animate={{ x: "0%" }}
           className={`
-          max-[767px]:top-0 max-[767px]:left-0 min-[768px]:top-1/3 min-[768px]:left-0
-          
-          max-[767px]:py-3 max-[767px]:px-5 max-[767px]:border-t-0 min-[768px]:flex-col 
-          
-           bg-black text-white socialBanner flex justify-center items-center	  z-10 fixed gap-4  py-6 px-3 rounded-r-lg`}
+          max-[767px]:bottom-0 max-[767px]:right-0 max-[767px]:py-3  max-[767px]:border-2 max-[767px]:border-r-0
+          max-[767px]:border-b-0
+          min-[768px]:top-1/3 min-[768px]:left-0
+          bg-black text-white
+           min-[768px]:flex-col 
+           border-2 border-l-0
+            socialBanner flex justify-center items-center	  z-10 fixed gap-4  max-[767px]:rounded-tl-xl  py-6 px-3 min-[768px]:rounded-r-lg`}
         >
           <a
             className="text-2xl hover:scale-150 hover:text-orange-800 duration-150"
@@ -230,9 +251,12 @@ export default function Home() {
           >
             <FaXTwitter />
           </a>
-        </motion.div>*/}
+        </motion.div>
       </div>
-      <div id="about" className="items-center justify-center gap-2 flex flex-col text-white 	">
+      <div
+        id="about"
+        className="items-center justify-center gap-2 flex flex-col text-white 	"
+      >
         <div className=" min-h-[100vh]  flex w-[100%]  flex-col py-10 justify-center items-center overflow-hidden relative">
           <div className=" flex max-[767px]:flex-col w-[80%] gap-3">
             <motion.div
@@ -240,8 +264,15 @@ export default function Home() {
                 duration: 1,
                 // delay: 4,
               }}
-              initial={{ x: "-100%", opacity: 0 }}
-              animate={{ x: "0%", opacity: 1 }}
+              initial={{
+                x: -100,
+                // opacity: 0.5
+              }}
+              whileInView={{
+                x: 0,
+                opacity: 1,
+              }}
+              viewport={{ once: true }}
               class="rounded-[40px]  profileCard p-2 hover:scale-[101%] duration-100 flex flex-col justify-center items-center isolate aspect-square w-[50%] max-[767px]:w-[100%] "
             >
               <div className="w-[80%] font-lexend max-[767px]:text-lg text-6xl">
@@ -316,7 +347,9 @@ export default function Home() {
                 className="rounded-[20px] profileCard flex justify-center items-center w-[100%] h-[395px] hover:scale-[101%] duration-100"
               >
                 {/* <div className={`duration-200 hover:border-white aspect-square w-[50px] border-2 border-black bg-contain bg-center bg-no-repeat rounded-full ${bg-[url('./images/me.jpg')]}`}></div> */}
-                <div className="w-[80%] flex flex-col font-lexend max-[767px]:text-sm text-6xl"><GitHubCalendar hideTotalCount={true} username="rishi1314"  /></div>
+                <div className="w-[80%] flex flex-col font-lexend max-[767px]:text-sm text-6xl">
+                  <GitHubCalendar hideTotalCount={true} username="rishi1314" />
+                </div>
               </motion.div>
             </div>
           </div>
@@ -324,8 +357,7 @@ export default function Home() {
         <div
           id="skills"
           className="min-h-[50vh] flex flex-col justify-center items-center"
-         >
-          
+        >
           <div className="profileCard  max-[767px]:max-h[50vh]  flex  flex-wrap max-[767px]:p-2  p-4 gap-4 items-center justify-center max-[767px]:w-[90%] w-[50%]   rounded-lg">
             <div className="flex gap-1 hover:scale-105 duration-200 items-center skillsCard w-fit max-[767px]:p-1 p-4 max-[767px]:text-sm text-xl">
               <SiReact />
@@ -369,7 +401,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div id="projects" className=" flex w-[100%] flex-col justify-center items-center">
+        <div
+          id="projects"
+          className=" flex w-[100%] flex-col justify-center items-center"
+        >
           <h1 className="font-seewead my-6 max-[767px]:text-2xl min-[768px]:text-4xl">
             My Projects
           </h1>
