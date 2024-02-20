@@ -131,7 +131,7 @@ export default function Home() {
           alt="me"
           className="z-1 floatPc absolute top-0 right-0 w-[6rem] duration-100 origin-bottom"
         /> */}
-        <div className="fixed  flex top-0 w-[100%] justify-around  z-10 bg-white/90 rounded-b-3xl items-center">
+        <div className="fixed hidden  top-0 w-[100%] justify-around  z-10 bg-white/90 rounded-b-3xl items-center">
           <div className="w-[25%]  flex justify-center max-[767px]:hidden">
             {" "}
             <Image src={mepg} alt="me" className="z-10 w-[3rem] h-[3rem]" />
