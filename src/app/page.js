@@ -2,21 +2,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
-import {
-  FaRegEye,
-  FaRegMoon,
-  FaRegSun,
-  FaGithub,
-  FaLinkedinIn,
-  FaXTwitter,
-} from "react-icons/fa6";
-import toshare from "./images/toshare.JPG";
-import appleclonse from "./images/appleclone.JPG";
-import mepg from "./images/mepg.png";
-import circle from "./images/circle.png";
-import juice from "./images/juice.png";
-import pc from "./images/pc.png";
-import Image from "next/image";
+
+
 import {
   SiExpress,
   SiJavascript,
@@ -29,6 +16,7 @@ import {
   SiTypescript,
 } from "react-icons/si";
 import GitHubCalendar from "react-github-calendar";
+import Hero from "./components/Hero";
 
 export default function Home() {
   const [theme, settheme] = useState(true);
@@ -45,7 +33,6 @@ export default function Home() {
         customConfig
       );
       setgithub(res);
-      console.log(res);
     };
     githubApi();
   }, []);
@@ -89,170 +76,11 @@ export default function Home() {
     "CSS",
     "MySql",
   ];
-  // `${theme === "dark" ? "bg-black" : "bg-white"}`}
+  
   // https://matterapp.com/
   return (
     <main className={`bg-neutral-900 overflow-hidden`}>
-      <div
-        id="home"
-        className={`
-        relative
-        ${theme === "dark" ? "bg-white" : "bg-white"}
-        w-full
-        bg-cover bg-center bg-no-repeat  min-[767px]:rounded-b-[50px]
-        min-h-screen  overflow-hidden
-        max-[767px]:h-[100vh] flex-col-reverse justify-center items-center
-        flex min-[767px]:items-center min-[767px]:justify-center
-        `}
-      >
-        <div className="flex flex-col items-center z-10 ">
-          <div>
-            <div className="font-lexend">I am</div>
-            <div className=" font-lexend text-[6rem] max-[767px]:text-[3rem]">
-              Rishi Raj
-            </div>
-          </div>
-          <div className="max-[767px]:text-[0.6rem]">
-            Developer * Builder * Problem-Solver
-          </div>
-        </div>
-        <Image
-          src={mepg}
-          alt="me"
-          className="z-10 profilePhoto aspect-square w-[10rem]"
-        />
-        {/* <Image
-          src={juice}
-          alt="me"
-          className="z-1 floatJuice absolute top-0 -left-10 w-[6rem] duration-100 origin-bottom"
-        />
-        <Image
-          src={pc}
-          alt="me"
-          className="z-1 floatPc absolute top-0 right-0 w-[6rem] duration-100 origin-bottom"
-        /> */}
-        <div className="fixed hidden  top-0 w-[100%] justify-around  z-10 bg-white/90 rounded-b-3xl items-center">
-          <div className="w-[25%]  flex justify-center max-[767px]:hidden">
-            {" "}
-            <Image src={mepg} alt="me" className="z-10 w-[3rem] h-[3rem]" />
-          </div>
-          <div className="font-mukta  flex-wrap w-[50%] max-[767px]:w-[100%] max-[767px]:text-xl gap-2  justify-around flex">
-            <input
-              type="button"
-              value="Home"
-              className=" cursor-pointer"
-              onClick={() => {
-                document.getElementById("home").scrollIntoView();
-              }}
-            />
-            <input
-              type="button"
-              value="About"
-              className=" cursor-pointer"
-              onClick={() => {
-                document.getElementById("about").scrollIntoView();
-              }}
-            />
-            <input
-              type="button"
-              value="Skills"
-              className=" cursor-pointer"
-              onClick={() => {
-                document.getElementById("skills").scrollIntoView();
-              }}
-            />
-            <input
-              type="button"
-              value="Projects"
-              className=" cursor-pointer"
-              onClick={() => {
-                document.getElementById("projects").scrollIntoView();
-              }}
-            />
-          </div>
-          <div className="w-[25%] flex justify-center max-[767px]:hidden">
-            <label class="label">
-              <div class="toggle">
-                <input
-                  class="toggle-state"
-                  type="checkbox"
-                  name="check"
-                  value="check"
-                  onClick={() => {
-                    settheme(!theme);
-                  }}
-                />
-                <div
-                  className={`indicator  ${
-                    theme ? " bg-blue-500" : "bg-orange-400 "
-                  }`}
-                ></div>
-              </div>
-            </label>
-          </div>
-
-          {/* <div
-            className={`flex ${
-              theme === "dark" ? "flex-row" : "flex-row-reverse"
-            } w-[25%] justify-center `}
-          >
-            <button
-              className="text-2xl	rounded-full bg-orange-500	text-white	 p-1 m-1"
-              onClick={() => {
-                settheme("light");
-              }}
-            >
-              <FaRegSun />
-            </button>
-            <button
-              className="text-2xl	rounded-full bg-cyan-900 text-white	 p-1 m-1	"
-              onClick={() => {
-                settheme("dark");
-              }}
-            >
-              <FaRegMoon />
-            </button>
-          </div> */}
-        </div>
-
-        <motion.div
-          transition={{
-            duration: 1,
-          }}
-          initial={{ x: "-100%" }}
-          animate={{ x: "0%" }}
-          className={`
-          max-[767px]:bottom-0 max-[767px]:right-0 max-[767px]:py-3  max-[767px]:border-2 max-[767px]:border-r-0
-          max-[767px]:border-b-0
-          min-[768px]:top-1/3 min-[768px]:left-0
-          bg-black text-white
-           min-[768px]:flex-col 
-           border-2 border-l-0
-            socialBanner flex justify-center items-center	  z-10 fixed gap-4  max-[767px]:rounded-tl-xl  py-6 px-3 min-[768px]:rounded-r-lg`}
-        >
-          <a
-            className="text-2xl hover:scale-150 hover:text-orange-800 duration-150"
-            href="https://github.com/Rishi1314"
-            target="blank"
-          >
-            <FaGithub />
-          </a>
-          <a
-            className="text-2xl hover:scale-150 hover:text-sky-400 duration-150"
-            href="https://www.linkedin.com/in/rishi-raj-a36930206/"
-            target="blank"
-          >
-            <FaLinkedinIn />
-          </a>
-          <a
-            className="text-2xl hover:scale-150	duration-150"
-            href="https://twitter.com/rishirajbdev"
-            target="blank"
-          >
-            <FaXTwitter />
-          </a>
-        </motion.div>
-      </div>
+      <Hero/>
       <div
         id="about"
         className="items-center justify-center gap-2 flex flex-col text-white 	"
@@ -348,7 +176,7 @@ export default function Home() {
               >
                 {/* <div className={`duration-200 hover:border-white aspect-square w-[50px] border-2 border-black bg-contain bg-center bg-no-repeat rounded-full ${bg-[url('./images/me.jpg')]}`}></div> */}
                 <div className="w-[80%] flex flex-col font-lexend max-[767px]:text-sm text-6xl">
-                  <GitHubCalendar hideTotalCount={true} username="rishi1314" />
+                  <GitHubCalendar  hideTotalCount={true} username="rishi1314" />
                 </div>
               </motion.div>
             </div>
