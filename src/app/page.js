@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
-
+import appleClone from "./images/appleclone.JPG"
 
 import {
   SiExpress,
@@ -17,6 +17,7 @@ import {
 } from "react-icons/si";
 import GitHubCalendar from "react-github-calendar";
 import Hero from "./components/Hero";
+import Image from "next/image";
 
 export default function Home() {
   const [theme, settheme] = useState(true);
@@ -231,13 +232,20 @@ export default function Home() {
         </div>
         <div
           id="projects"
-          className=" flex w-[100%] flex-col justify-center items-center"
+          className=" flex w-[100%] flex-col items-center "
         >
-          <h1 className="font-seewead my-6 max-[767px]:text-2xl min-[768px]:text-4xl">
+          <h1 className="font-lexend w-[80%]  my-6 max-[767px]:text-2xl min-[768px]:text-4xl">
             My Projects
           </h1>
-          <div className="flex flex-wrap gap-4 justify-center items-center">
-            Under Development.
+          <div className="flex justify-center w-[100%]">
+            <div className="p-2 py-3 flex justify-between w-[80%] border-[#5555559b] border-solid border-y-2">
+              <div className="bg-[url('./images/appleclone.JPG')] block rounded-[20px] border-[#5555559b] border-solid border-2 w-[250px] bg-contain bg-no-repeat bg-center  aspect-video">
+                
+              </div>
+              <div>
+                <h1 className="font-mukta max-[767px]:text-xl min-[768px]:text-4xl">Apple Clone</h1>
+              </div>
+            </div>
           </div>
         </div>
       </div>
