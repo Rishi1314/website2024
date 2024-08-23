@@ -151,12 +151,12 @@ export default function Home() {
                 </div>
                 <div className="w-1/1 font-mukta flex flex-col justify-center items-start aspect-video">
                   <span className="text-3xl max-[767px]:text-sm">
-                    {`I `}
-                    <span className="text-[#bbbcbc] underline">{`build`}</span>
-                    {` in public and occasionally tweet about random stuff.`}
+                    {`I am learning `}
+                    <span className="text-[#bbbcbc] underline">{`Data Science.`}</span>
+                    {` Follow my journey!`}
                   </span>
 
-                  <span className="max-[767px]:text-sm">#100DaysOfCode</span>
+                  {/* <span className="max-[767px]:text-sm">#100DaysOfCode</span> */}
                 </div>
               </motion.div>
               <motion.div
@@ -239,12 +239,17 @@ export default function Home() {
           </h1>
           <div className="flex justify-center w-[100%]">
             <div className="p-2 py-3 flex justify-between w-[80%] border-[#5555559b] border-solid border-y-2">
-              <div className="bg-[url('./images/appleclone.JPG')] block rounded-[20px] border-[#5555559b] border-solid border-2 w-[250px] bg-contain bg-no-repeat bg-center  aspect-video">
+              <div className="font-mukta max-[767px]:text-2xl min-[768px]:text-5xl py-3 w-[100%] text-center ">
+              🚧Coding in progress!🚧    
+              </div>
+
+            
+              {/* <div className="bg-[url('./images/appleclone.JPG')] block rounded-[20px] border-[#5555559b] border-solid border-2 w-[250px] bg-contain bg-no-repeat bg-center  aspect-video">
                 
               </div>
               <div>
                 <h1 className="font-mukta max-[767px]:text-xl min-[768px]:text-4xl">Apple Clone</h1>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
