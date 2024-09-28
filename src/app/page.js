@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
-import appleClone from "./images/appleclone.JPG"
+import appleClone from "./images/appleclone.JPG";
 
 import {
   SiExpress,
@@ -18,6 +18,7 @@ import {
 import GitHubCalendar from "react-github-calendar";
 import Hero from "./components/Hero";
 import Image from "next/image";
+import { FaGithub, FaLink } from "react-icons/fa6";
 
 export default function Home() {
   const [theme, settheme] = useState(true);
@@ -77,11 +78,11 @@ export default function Home() {
     "CSS",
     "MySql",
   ];
-  
+
   // https://matterapp.com/
   return (
     <main className={`bg-neutral-900 overflow-hidden`}>
-      <Hero/>
+      <Hero />
       <div
         id="about"
         className="items-center justify-center gap-2 flex flex-col text-white 	"
@@ -149,7 +150,7 @@ export default function Home() {
                     Follow
                   </a>
                 </div>
-                <div className="w-1/1 font-mukta flex flex-col justify-center items-start aspect-video">
+                <div className="w-1/1  font-mukta flex flex-col justify-center items-start">
                   <span className="text-3xl max-[767px]:text-sm">
                     {`I am learning `}
                     <span className="text-[#bbbcbc] underline">{`Data Science.`}</span>
@@ -177,7 +178,7 @@ export default function Home() {
               >
                 {/* <div className={`duration-200 hover:border-white aspect-square w-[50px] border-2 border-black bg-contain bg-center bg-no-repeat rounded-full ${bg-[url('./images/me.jpg')]}`}></div> */}
                 <div className="w-[80%] flex flex-col font-lexend max-[767px]:text-sm text-6xl">
-                  <GitHubCalendar  hideTotalCount={true} username="rishi1314" />
+                  <GitHubCalendar hideTotalCount={true} username="rishi1314" />
                 </div>
               </motion.div>
             </div>
@@ -230,26 +231,48 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div
-          id="projects"
-          className=" flex w-[100%] flex-col items-center "
-        >
+        <div id="projects" className=" flex w-[100%] flex-col items-center ">
           <h1 className="font-lexend w-[80%]  my-6 max-[767px]:text-2xl min-[768px]:text-4xl">
             My Projects
           </h1>
           <div className="flex justify-center w-[100%]">
             <div className="p-2 py-3 flex justify-between w-[80%] border-[#5555559b] border-solid border-y-2">
               <div className="font-mukta max-[767px]:text-2xl min-[768px]:text-5xl py-3 w-[100%] text-center ">
-              🚧Coding in progress!🚧    
-              </div>
-
-            
-              {/* <div className="bg-[url('./images/appleclone.JPG')] block rounded-[20px] border-[#5555559b] border-solid border-2 w-[250px] bg-contain bg-no-repeat bg-center  aspect-video">
+                {/* 🚧Coding in progress!🚧     */}
+                <div className="text-2xl flex flex-col gap-4 border-solid border-2 p-2 rounded-[10px] border-[#5555559b]">
+                  <div className="flex justify-between">
+                    <span>
+                      Flex|
+                      <span className="text-xl text-[#747474]">
+                        {" "}
+                        ReactJS, Tailwind, NodeJS, ExpressJS, MongoDB, Redux,
+                        Firebase
+                      </span>
+                    </span>
+                    <div className="flex w-[10%] justify-evenly">
+                      <a
+                        className="text-2xl bg-orange-400 rounded-full p-1 hover:scale-150 duration-150"
+                        href="https://github.com/Rishi1314/Flexv2"
+                        target="blank"
+                      >
+                        <FaGithub />
+                      </a>
+                      <a
+                        className="text-2xl p-1 rounded-full bg-blue-400  hover:scale-150 duration-150"
+                        href="https://flexfordev.onrender.com/"
+                        target="blank"
+                      >
+                        <FaLink />
+                      </a>
+                    </div>
+                    
+                  </div>
+                  <div className="bg-[url('./images/flexx.png')] block  bg-[#ffffff81] border-solid border-2 w-[350px] rounded-[4px] duration-150 hover:scale-150 bg-contain bg-no-repeat bg-center  aspect-video">
                 
               </div>
-              <div>
-                <h1 className="font-mukta max-[767px]:text-xl min-[768px]:text-4xl">Apple Clone</h1>
-              </div> */}
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
